@@ -360,6 +360,8 @@ function Home() {
             <p><strong>Type:</strong> {internship.type}</p>
             <p><strong>Start Date:</strong> {internship.startDate}</p>
             <p><strong>End Date:</strong> {internship.endDate}</p>
+            <p><strong>Latitude</strong>{internship.latitude}</p>
+            <p><strong>Longitude</strong>{internship.longitude}</p>
           </div>
 
           {[3, 6, 13, 20].includes(internship.id) ? (
@@ -424,3 +426,4 @@ function Home() {
 }
 
 export default Home;
+

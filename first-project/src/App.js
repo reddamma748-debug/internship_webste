@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Internships from "./pages/Internships";
 import Resume from "./pages/Resume";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import CreateResume from "./pages/CreateResume";
 import ApplyForm from "./pages/ApplyForm";
 import Navbar from "./components/Navbar";
@@ -19,17 +20,16 @@ function App() {
       {isLoggedIn && <Navbar />}
 
       <Routes>
-        {/* Login opens first */}
+        {/* Login Page */}
         <Route
           path="/"
           element={
-            isLoggedIn ? (
-              <Navigate to="/home" />
-            ) : (
-              <Login setIsLoggedIn={setIsLoggedIn} />
-            )
+            isLoggedIn ? <Navigate to="/home" /> : <Login setIsLoggedIn={setIsLoggedIn} />
           }
         />
+
+        {/* Register Page */}
+        <Route path="/register" element={<Register />} />
 
         {/* Protected Pages */}
         <Route
