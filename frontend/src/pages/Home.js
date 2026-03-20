@@ -38,8 +38,8 @@ function Home() {
           <img src={reddy2} alt="IT Internship" />
           <img src={reddy3} alt="IT Internship" />
           <img src={r2} alt="IT Internship" />
-          <img src={reddy5} alt="IT Internship" />
-          <img src={reddy6} alt="IT Internship" />
+          <img src={pick10} alt="IT Internship" />
+          <img src={pick8} alt="IT Internship" />
           <img src={reddy7} alt="IT Internship" />
         </div>
       </div>
@@ -49,12 +49,12 @@ function Home() {
       <div className="scroll-container">
         <div className="scroll-left">
           <img src={pick8} alt="Non-IT Internship" />
-          <img src={pick2} alt="Non-IT Internship" />
+          <img src={reddy7} alt="Non-IT Internship" />
           <img src={pick9} alt="Non-IT Internship" />
           <img src={pick10} alt="Non-IT Internship" />
           <img src={pick11} alt="Non-IT Internship" />
-          <img src={pick6} alt="Non-IT Internship" />
-          <img src={pick7} alt="Non-IT Internship" />  
+          <img src={reddy7} alt="Non-IT Internship" />
+          <img src={reddy3} alt="Non-IT Internship" />  
         </div>
       </div>
 

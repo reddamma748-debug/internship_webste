@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import "../App.css";
+import logo from "../images/internship_logo.jpg";
 
-function Home() {
+function Internships() {
   const [category, setCategory] = useState("");
   const [skill, setSkill] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [selectedInternship, setSelectedInternship] = useState(null);
+  const [appliedInternships, setAppliedInternships] = useState([]);
+  const [showAppliedDropdown, setShowAppliedDropdown] = useState(false);
+
   const [applicant, setApplicant] = useState({
     name: "",
     email: "",
     resume: null,
   });
+
 
   const internships = [
     // ================= IT INTERNSHIPS =================
@@ -303,8 +308,7 @@ function Home() {
     const matchCategory =
       category === "" || internship.category === category;
     const matchTitle =
-      search === "" ||
-      internship.title.toLowerCase().includes(search);
+      search === "" || internship.title.toLowerCase().includes(search);
     return matchCategory && matchTitle;
   });
 
@@ -325,14 +329,22 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Applied Successfully for ${selectedInternship.title}`);
+    if (!appliedInternships.includes(selectedInternship.id)) {
+      setAppliedInternships([...appliedInternships, selectedInternship.id]);
+    }
     setApplicant({ name: "", email: "", resume: null });
     setShowForm(false);
   };
+
+  const appliedInternshipDetails = internships.filter((i) =>
+    appliedInternships.includes(i.id)
+  );
 
   return (
     <div className="container">
       <h2>Internships</h2>
 
+      {/* 🔹 Filters & Applied Dropdown */}
       <div className="filters">
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">All</option>
@@ -346,8 +358,33 @@ function Home() {
           value={skill}
           onChange={(e) => setSkill(e.target.value)}
         />
+
+        {/* Applied Internships Dropdown */}
+        <div className="applied-dropdown">
+          <button
+            className="applied-dropdown-button"
+            onClick={() => setShowAppliedDropdown(!showAppliedDropdown)}
+          >
+            Applied ({appliedInternships.length})
+          </button>
+
+          {showAppliedDropdown && (
+            <div className="applied-dropdown-menu">
+              {appliedInternshipDetails.length === 0 ? (
+                <div className="applied-item">No internships applied yet</div>
+              ) : (
+                appliedInternshipDetails.map((i) => (
+                  <div key={i.id} className="applied-item">
+                    <strong>{i.title}</strong> - {i.company}
+                  </div>
+                ))
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
+      {/* 🔹 Internship Cards */}
       {filteredInternships.map((internship) => (
         <div key={internship.id} className="card">
           <div>
@@ -360,23 +397,28 @@ function Home() {
             <p><strong>Type:</strong> {internship.type}</p>
             <p><strong>Start Date:</strong> {internship.startDate}</p>
             <p><strong>End Date:</strong> {internship.endDate}</p>
-            <p><strong>Latitude</strong>{internship.latitude}</p>
-            <p><strong>Longitude</strong>{internship.longitude}</p>
+            <p><strong>Latitude:</strong> {internship.latitude}</p>
+            <p><strong>Longitude:</strong> {internship.longitude}</p>
           </div>
 
-          {[3, 6, 13, 20].includes(internship.id) ? (
-          <p className="expired-text">Expired!</p>
+          {[3, 8, 12, 16, 17].includes(internship.id) ? (
+            <p className="expired-text">Expired!</p>
+          ) : appliedInternships.includes(internship.id) ? (
+            <button className="applied-button" disabled>
+              Applied
+            </button>
           ) : (
-          <button
-          className="apply-button"
-          onClick={() => handleApplyClick(internship)}
-          >
-          Apply
-          </button>
+            <button
+              className="apply-button"
+              onClick={() => handleApplyClick(internship)}
+            >
+              Apply
+            </button>
           )}
         </div>
       ))}
 
+      {/* 🔹 Modal Form */}
       {showForm && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -406,9 +448,7 @@ function Home() {
                 required
               />
               <div className="modal-buttons">
-                <button type="submit" className="submit-button">
-                  Submit
-                </button>
+                <button type="submit" className="submit-button">Submit</button>
                 <button
                   type="button"
                   className="cancel-button"
@@ -425,5 +465,4 @@ function Home() {
   );
 }
 
-export default Home;
-
+export default Internships;

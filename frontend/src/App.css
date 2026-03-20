@@ -316,25 +316,6 @@ body {
   box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Internship card titles */
-.internship-title{
-  background-color: #6f5df5;   /* background color */
-  color: white;                /* text color */
-  padding: 8px;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-/* IT title blue */
-.it-title {
-  background-color: #1f83f6;
-}
-
-/* Non-IT title green */
-.non-it-title {
-  background-color: #1f83f6;
-}
-
 /* Apply button */
 .apply-button {
   background-color: green;
@@ -584,3 +565,189 @@ body {
 .login-card span:hover {
   text-decoration: underline;
 }
+
+/* Internship Title Style */
+.internship-title {
+  background-color: rgb(158, 76, 245);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Apply Button */
+.apply-button{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-button:hover{
+  background-color: #0056b3;
+}
+
+/* Applied Button */
+.applied-button{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+/* Expired text */
+.expired-text{
+  color: red;
+  font-weight: bold;
+}
+
+.logo-section{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.logo{
+  width:80px;
+  height:80px;
+}
+
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-right a {
+  color: #fff;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right button {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-right button:hover {
+  background: #d9363e;
+}
+
+/* Container */
+.applied-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button */
+.applied-dropdown-button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 8px 14px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.applied-dropdown-button:hover {
+  background-color: #f5f7fa;
+  border-color: #999;
+}
+
+/* Dropdown Menu */
+.applied-dropdown-menu {
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 240px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  padding: 12px;
+  z-index: 100;
+  border-radius: 8px;
+  top: 40px;
+  left: 0;
+  border: 1px solid #eee;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Each Item */
+.applied-item {
+  padding: 8px 6px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #444;
+}
+
+.applied-item:last-child {
+  border-bottom: none;
+}
+
+/* Highlight text */
+.applied-item strong {
+  color: #222;
+}
+
+/* Apply Button (matching inputs style) */
+.apply-button {
+  background-color: green;
+  color: white;
+  border: 1px solid #dcdcdc;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+
+
