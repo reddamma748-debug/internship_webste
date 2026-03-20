@@ -49,8 +49,8 @@ function Login({ setIsLoggedIn }) {
     }
 
     const url = isLogin
-      ? "http://localhost:5000/login"
-      : "http://localhost:5000/register";
+  ? "https://internship-backend1.onrender.com/login"
+  : "https://internship-backend1.onrender.com/register";
 
     const body = isLogin
       ? {
@@ -101,8 +101,7 @@ function Login({ setIsLoggedIn }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/forgot-password", {
-        method: "POST",
+      const res = await fetch("https://internship-backend1.onrender.com/forgot-password", {        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
